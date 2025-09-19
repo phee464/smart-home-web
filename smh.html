@@ -1,0 +1,2645 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Smart Home 61 - ระบบบ้านอัจฉริยะระดับองค์กรด้วย AI, IoT และระบบอัตโนมัติ">
+    <meta name="keywords" content="smart home, บ้านอัจฉริยะ, IoT, AI, automation, ระบบรักษาความปลอดภัย">
+    <meta name="author" content="Smart Home 61 Group 2">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Smart Home 61 - นวัตกรรมบ้านอัจฉริยะแห่งอนาคต">
+    <meta property="og:description" content="ระบบบ้านอัจฉริยะระดับองค์กรที่ผสมผสานเทคโนโลยี AI, IoT และระบบอัตโนมัติ">
+    <meta name="theme-color" content="#0a0e27">
+    
+    <title>Smart Home 61 - ระบบบ้านอัจฉริยะระดับองค์กร</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* CSS Reset and Base Configuration */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* CSS Variables and Theme Configuration */
+        :root {
+            /* Color System */
+            --primary-color: #0080ff;
+            --secondary-color: #8b5cf6;
+            --tertiary-color: #ec4899;
+            --quaternary-color: #00d4ff;
+            --quinary-color: #a855f7;
+            --accent-color: #10b981;
+            
+            /* Gradient System */
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #00f2fe 100%);
+            --secondary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --tertiary-gradient: linear-gradient(135deg, #f093fb 0%, #4facfe 100%);
+            --accent-gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            --hover-gradient: linear-gradient(135deg, var(--quaternary-color), var(--quinary-color));
+            --aurora-gradient: linear-gradient(45deg, #00d4ff, #8b5cf6, #ec4899, #00d4ff);
+            
+            /* Dark Theme Colors */
+            --dark-bg-primary: #0a0e27;
+            --dark-bg-secondary: #0f1429;
+            --dark-bg-tertiary: #141933;
+            --dark-surface: rgba(15, 20, 40, 0.85);
+            --dark-surface-hover: rgba(15, 20, 40, 0.95);
+            
+            /* Light Theme Colors */
+            --light-bg-primary: #f8fafc;
+            --light-bg-secondary: #f1f5f9;
+            --light-bg-tertiary: #e2e8f0;
+            --light-surface: rgba(255, 255, 255, 0.95);
+            --light-surface-hover: rgba(255, 255, 255, 1);
+            
+            /* Text Colors */
+            --text-primary-dark: #ffffff;
+            --text-secondary-dark: rgba(255, 255, 255, 0.8);
+            --text-tertiary-dark: rgba(255, 255, 255, 0.6);
+            --text-primary-light: #0f172a;
+            --text-secondary-light: rgba(15, 23, 42, 0.8);
+            --text-tertiary-light: rgba(15, 23, 42, 0.6);
+            
+            /* Glass Morphism */
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.18);
+            --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            
+            /* Border System */
+            --border-color-dark: rgba(255, 255, 255, 0.1);
+            --border-color-light: rgba(0, 0, 0, 0.1);
+            --border-width: 1px;
+            --border-radius-sm: 8px;
+            --border-radius-md: 16px;
+            --border-radius-lg: 24px;
+            --border-radius-xl: 32px;
+            
+            /* Shadow System */
+            --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1);
+            --shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.25);
+            --shadow-glow: 0 0 40px rgba(0, 128, 255, 0.3);
+            
+            /* Timing Functions */
+            --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-base: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-slower: 750ms cubic-bezier(0.4, 0, 0.2, 1);
+            
+            /* Spacing System */
+            --spacing-xs: 0.25rem;
+            --spacing-sm: 0.5rem;
+            --spacing-md: 1rem;
+            --spacing-lg: 1.5rem;
+            --spacing-xl: 2rem;
+            --spacing-2xl: 3rem;
+            --spacing-3xl: 4rem;
+            --spacing-4xl: 6rem;
+            
+            /* Typography Scale */
+            --font-size-xs: 0.75rem;
+            --font-size-sm: 0.875rem;
+            --font-size-base: 1rem;
+            --font-size-lg: 1.125rem;
+            --font-size-xl: 1.25rem;
+            --font-size-2xl: 1.5rem;
+            --font-size-3xl: 1.875rem;
+            --font-size-4xl: 2.25rem;
+            --font-size-5xl: 3rem;
+            --font-size-6xl: 3.75rem;
+            --font-size-7xl: 4.5rem;
+            
+            /* Active Theme Variables */
+            --bg-primary: var(--dark-bg-primary);
+            --bg-secondary: var(--dark-bg-secondary);
+            --bg-tertiary: var(--dark-bg-tertiary);
+            --surface: var(--dark-surface);
+            --surface-hover: var(--dark-surface-hover);
+            --text-primary: var(--text-primary-dark);
+            --text-secondary: var(--text-secondary-dark);
+            --text-tertiary: var(--text-tertiary-dark);
+            --border-color: var(--border-color-dark);
+        }
+
+        /* Light Theme Override */
+        body.light-theme {
+            --bg-primary: var(--light-bg-primary);
+            --bg-secondary: var(--light-bg-secondary);
+            --bg-tertiary: var(--light-bg-tertiary);
+            --surface: var(--light-surface);
+            --surface-hover: var(--light-surface-hover);
+            --text-primary: var(--text-primary-light);
+            --text-secondary: var(--text-secondary-light);
+            --text-tertiary: var(--text-tertiary-light);
+            --border-color: var(--border-color-light);
+            --glass-bg: rgba(0, 0, 0, 0.02);
+            --glass-border: rgba(0, 0, 0, 0.1);
+        }
+
+        /* Typography System */
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: 'Sarabun', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: var(--font-size-base);
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--bg-primary);
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
+            transition: background-color var(--transition-base), color var(--transition-base);
+        }
+
+        /* Animated Background */
+        .aurora-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.3;
+        }
+
+        .aurora {
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: var(--aurora-gradient);
+            background-size: 400% 400%;
+            animation: aurora 15s ease infinite;
+            filter: blur(100px);
+            opacity: 0.5;
+        }
+
+        @keyframes aurora {
+            0%, 100% { 
+                background-position: 0% 50%;
+                transform: rotate(0deg);
+            }
+            25% { 
+                background-position: 50% 25%;
+                transform: rotate(90deg);
+            }
+            50% { 
+                background-position: 100% 50%;
+                transform: rotate(180deg);
+            }
+            75% { 
+                background-position: 50% 75%;
+                transform: rotate(270deg);
+            }
+        }
+
+        /* Image Gallery Styles */
+.image-gallery {
+    margin-top: var(--spacing-2xl);
+    padding: var(--spacing-xl);
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    border-radius: var(--border-radius-lg);
+    border: 1px solid var(--glass-border);
+    overflow: hidden;
+}
+
+.gallery-title {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    margin-bottom: var(--spacing-lg);
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-align: center;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+    background: var(--bg-secondary);
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-base);
+    cursor: pointer;
+}
+
+.gallery-item:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 128, 255, 0.3);
+    z-index: 10;
+}
+
+.gallery-image {
+    width: 100%;
+    height: 750px;
+    object-fit: cover;
+    display: block;
+    transition: all var(--transition-slow);
+}
+
+.gallery-item:hover .gallery-image {
+    transform: scale(1.1);
+    filter: brightness(1.1);
+}
+
+.gallery-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: var(--spacing-md);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5), transparent);
+    color: white;
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    text-align: center;
+    transform: translateY(100%);
+    transition: transform var(--transition-base);
+}
+
+.gallery-item:hover .gallery-caption {
+    transform: translateY(0);
+}
+
+/* Lightbox Modal */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 9999;
+    backdrop-filter: blur(10px);
+}
+
+.lightbox--active {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox__close {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 50%;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-base);
+}
+
+.lightbox__close:hover {
+    background: var(--accent-gradient);
+    transform: rotate(90deg) scale(1.1);
+}
+
+.lightbox__image {
+    max-width: 90%;
+    max-height: 80vh;
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox__caption {
+    color: white;
+    font-size: var(--font-size-lg);
+    margin-top: var(--spacing-lg);
+    text-align: center;
+    padding: var(--spacing-md) var(--spacing-xl);
+    background: var(--glass-bg);
+    border-radius: var(--border-radius-xl);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+}
+
+        /* Container System */
+        .container {
+            width: 100%;
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Glass Card Style */
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: var(--border-radius-lg);
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--glass-shadow);
+            transition: all var(--transition-base);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 128, 255, 0.2);
+            border-color: var(--primary-color);
+        }
+
+        /* Preloader Styles */
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: var(--bg-primary);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            transition: opacity var(--transition-slow), visibility var(--transition-slow);
+        }
+
+        .preloader--hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .preloader__logo {
+            width: 150px;
+            height: 150px;
+            position: relative;
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .preloader__circle {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 3px solid transparent;
+            border-radius: 50%;
+            animation: preloader-rotate 2s linear infinite;
+        }
+
+        .preloader__circle:nth-child(1) {
+            border-top-color: var(--primary-color);
+            animation-duration: 2s;
+        }
+
+        .preloader__circle:nth-child(2) {
+            border-right-color: var(--secondary-color);
+            animation-duration: 1.5s;
+            width: 80%;
+            height: 80%;
+            top: 10%;
+            left: 10%;
+        }
+
+        .preloader__circle:nth-child(3) {
+            border-bottom-color: var(--tertiary-color);
+            animation-duration: 1s;
+            width: 60%;
+            height: 60%;
+            top: 20%;
+            left: 20%;
+        }
+
+        @keyframes preloader-rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .preloader__text {
+            color: var(--text-secondary);
+            font-size: var(--font-size-xl);
+            font-weight: 600;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.6; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.05); }
+        }
+
+        /* Header Styles */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--glass-border);
+            transition: all var(--transition-base);
+        }
+
+        .header--scrolled {
+            background: var(--surface);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .header__container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--spacing-md) 0;
+        }
+
+        .header__logo {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+            text-decoration: none;
+            transition: transform var(--transition-base);
+        }
+
+        .header__logo:hover {
+            transform: scale(1.05);
+        }
+
+        .header__logo-icon {
+            width: 45px;
+            height: 45px;
+            background: var(--accent-gradient);
+            border-radius: var(--border-radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: logo-float 3s ease-in-out infinite;
+        }
+
+        @keyframes logo-float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .header__logo-text {
+            font-size: var(--font-size-xl);
+            font-weight: 700;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Navigation */
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xl);
+        }
+
+        .nav__list {
+            display: flex;
+            list-style: none;
+            gap: var(--spacing-xl);
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav__link {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: var(--font-size-base);
+            font-weight: 500;
+            position: relative;
+            padding: var(--spacing-sm) 0;
+            transition: color var(--transition-fast);
+        }
+
+        .nav__link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-gradient);
+            transition: width var(--transition-base);
+        }
+
+        .nav__link:hover {
+            color: var(--primary-color);
+        }
+
+        .nav__link:hover::after,
+        .nav__link--active::after {
+            width: 100%;
+        }
+
+        /* Control Buttons Group */
+        .controls-group {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+        }
+
+        /* Language Switcher */
+        .language-switcher {
+            display: flex;
+            align-items: center;
+            background: var(--glass-bg);
+            border-radius: var(--border-radius-xl);
+            padding: 4px;
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(10px);
+        }
+
+        .language-btn {
+            padding: var(--spacing-sm) var(--spacing-md);
+            border: none;
+            background: transparent;
+            color: var(--text-primary);
+            cursor: pointer;
+            border-radius: var(--border-radius-xl);
+            font-size: var(--font-size-sm);
+            font-weight: 600;
+            transition: all var(--transition-fast);
+            white-space: nowrap;
+        }
+
+        .language-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .language-btn--active {
+            background: var(--accent-gradient);
+            color: white;
+        }
+
+        /* Theme Toggle */
+        .theme-toggle {
+            display: flex;
+            align-items: center;
+            background: var(--glass-bg);
+            border-radius: var(--border-radius-xl);
+            padding: 4px;
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(10px);
+        }
+
+        .theme-toggle__button {
+            width: 40px;
+            height: 40px;
+            border-radius: var(--border-radius-xl);
+            border: none;
+            background: transparent;
+            color: var(--text-primary);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all var(--transition-fast);
+        }
+
+        .theme-toggle__button:hover {
+            transform: scale(1.1);
+        }
+
+        .theme-toggle__button--active {
+            background: var(--accent-gradient);
+            color: white;
+        }
+
+        /* Mobile Menu Toggle */
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+        }
+
+        .mobile-menu-toggle__bar {
+            width: 28px;
+            height: 3px;
+            background: var(--text-primary);
+            margin: 3px 0;
+            transition: all var(--transition-base);
+            border-radius: 2px;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+
+        .hero__background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .hero__gradient {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+            opacity: 0.8;
+        }
+
+        body.light-theme .hero__gradient {
+            background: radial-gradient(ellipse at bottom, #e0e7ff 0%, #f0f4f8 100%);
+        }
+
+        .hero__grid {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(0, 128, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 128, 255, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: grid-move 20s linear infinite;
+        }
+
+        @keyframes grid-move {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        .floating-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .shape {
+            position: absolute;
+            background: var(--accent-gradient);
+            opacity: 0.1;
+            animation: float 15s infinite;
+        }
+
+        .shape--circle {
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+        }
+
+        .shape--square {
+            width: 60px;
+            height: 60px;
+            transform: rotate(45deg);
+        }
+
+        .shape--triangle {
+            width: 0;
+            height: 0;
+            border-left: 30px solid transparent;
+            border-right: 30px solid transparent;
+            border-bottom: 60px solid;
+            border-bottom-color: var(--primary-color);
+            background: transparent;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.1;
+            }
+            90% {
+                opacity: 0.1;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .hero__content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: var(--spacing-xl);
+        }
+
+        .hero__badge {
+            display: inline-block;
+            padding: var(--spacing-sm) var(--spacing-lg);
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--border-radius-xl);
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: var(--spacing-xl);
+            backdrop-filter: blur(10px);
+            animation: badge-glow 2s ease-in-out infinite;
+        }
+
+        @keyframes badge-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(0, 128, 255, 0.3); }
+            50% { box-shadow: 0 0 40px rgba(0, 128, 255, 0.6); }
+        }
+
+        .hero__title {
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 800;
+            margin-bottom: var(--spacing-lg);
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            background-size: 200% auto;
+            animation: gradient-animation 3s ease-in-out infinite;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            text-align: center;
+            width: 100%;
+            display: block;
+        }
+
+        @keyframes gradient-animation {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .hero__subtitle {
+            font-size: var(--font-size-2xl);
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-md);
+            font-weight: 600;
+            opacity: 0;
+            animation: fade-slide-up 1s ease 0.3s forwards;
+        }
+
+        .hero__description {
+            font-size: var(--font-size-lg);
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-3xl);
+            line-height: 1.8;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0;
+            animation: fade-slide-up 1s ease 0.6s forwards;
+        }
+
+        @keyframes fade-slide-up {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero__cta {
+            display: flex;
+            gap: var(--spacing-lg);
+            justify-content: center;
+            flex-wrap: wrap;
+            opacity: 0;
+            animation: fade-slide-up 1s ease 0.9s forwards;
+        }
+
+        /* Button System */
+        .btn {
+            padding: var(--spacing-md) var(--spacing-2xl);
+            font-size: var(--font-size-base);
+            font-weight: 600;
+            border: none;
+            border-radius: var(--border-radius-xl);
+            cursor: pointer;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+            transition: all var(--transition-base);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            min-width: 180px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--spacing-sm);
+        }
+
+        .btn--primary {
+            background: var(--accent-gradient);
+            color: white;
+            box-shadow: 0 5px 20px rgba(0, 128, 255, 0.3);
+        }
+
+        .btn--secondary {
+            background: var(--glass-bg);
+            color: var(--text-primary);
+            border: 2px solid var(--primary-color);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(0, 128, 255, 0.4);
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.6s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        /* Section System */
+        .section {
+            padding: var(--spacing-4xl) 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section--alt {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.02), rgba(118, 75, 162, 0.02));
+        }
+
+        .section__title {
+            text-align: center;
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-weight: 700;
+            margin-bottom: var(--spacing-md);
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+            padding-bottom: var(--spacing-lg);
+        }
+
+        .section__title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--accent-gradient);
+            border-radius: 2px;
+        }
+
+        .section__subtitle {
+            text-align: center;
+            font-size: var(--font-size-lg);
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-3xl);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+        }
+
+        /* Statistics Section */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-xl);
+        }
+
+        .stat-card {
+            padding: var(--spacing-2xl);
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border-radius: var(--border-radius-lg);
+            border: 1px solid var(--glass-border);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: all var(--transition-base);
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, var(--primary-color) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity var(--transition-base);
+        }
+
+        .stat-card:hover::before {
+            opacity: 0.1;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: var(--shadow-glow);
+            border-color: var(--primary-color);
+        }
+
+        .stat-card__number {
+            font-size: var(--font-size-5xl);
+            font-weight: 800;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: var(--spacing-sm);
+            font-variant-numeric: tabular-nums;
+        }
+
+        .stat-card__label {
+            font-size: var(--font-size-lg);
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        /* Systems Grid */
+        .systems-grid {
+            display: flex;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--spacing-xl);
+        }
+
+        .system-card {
+            padding: var(--spacing-2xl);
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border-radius: var(--border-radius-lg);
+            border: 1px solid var(--glass-border);
+            position: relative;
+            overflow: hidden;
+            transition: all var(--transition-base);
+            cursor: pointer;
+        }
+
+        .system-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0, 128, 255, 0.1), rgba(168, 85, 247, 0.1));
+            opacity: 0;
+            transition: opacity var(--transition-base);
+        }
+
+        .system-card:hover::before {
+            opacity: 1;
+        }
+
+        .system-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: var(--shadow-glow);
+            border-color: var(--primary-color);
+        }
+
+        .system-card__icon {
+            width: 80px;
+            height: 80px;
+            background: var(--accent-gradient);
+            border-radius: var(--border-radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: var(--spacing-lg);
+            transition: transform var(--transition-slow);
+            box-shadow: 0 10px 30px rgba(0, 128, 255, 0.3);
+        }
+
+        .system-card:hover .system-card__icon {
+            transform: rotate(360deg) scale(1.1);
+            box-shadow: 0 15px 40px rgba(0, 128, 255, 0.5);
+        }
+
+        .system-card__title {
+            font-size: var(--font-size-xl);
+            font-weight: 700;
+            margin-bottom: var(--spacing-md);
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .system-card__description {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: var(--spacing-lg);
+            font-size: var(--font-size-base);
+        }
+
+        /* Feature List */
+        .features {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .features__item {
+            padding: var(--spacing-sm) 0;
+            padding-left: var(--spacing-xl);
+            position: relative;
+            color: var(--text-secondary);
+            transition: all var(--transition-fast);
+            font-size: var(--font-size-base);
+        }
+
+        .features__item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            background: var(--accent-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: pulse-dot 2s infinite;
+        }
+
+        @keyframes pulse-dot {
+            0%, 100% {
+                box-shadow: 0 0 0 0 rgba(0, 128, 255, 0.4);
+            }
+            50% {
+                box-shadow: 0 0 0 10px rgba(0, 128, 255, 0);
+            }
+        }
+
+        .features__item:hover {
+            transform: translateX(10px);
+            color: var(--text-primary);
+        }
+
+        /* Process Section */
+        .process-card {
+            padding: var(--spacing-2xl);
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border-radius: var(--border-radius-lg);
+            border: 1px solid var(--glass-border);
+            margin-bottom: var(--spacing-xl);
+            transition: all var(--transition-base);
+        }
+
+        .process-card:hover {
+            transform: translateX(10px);
+            box-shadow: var(--shadow-glow);
+            border-color: var(--primary-color);
+        }
+
+        .process-card__title {
+            font-size: var(--font-size-2xl);
+            font-weight: 700;
+            margin-bottom: var(--spacing-xl);
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .steps {
+            counter-reset: step-counter;
+        }
+
+        .step {
+            padding: var(--spacing-md) var(--spacing-lg);
+            background: linear-gradient(135deg, rgba(0, 128, 255, 0.05), rgba(139, 92, 246, 0.05));
+            border-left: 3px solid var(--primary-color);
+            border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0;
+            margin-bottom: var(--spacing-md);
+            color: var(--text-secondary);
+            transition: all var(--transition-fast);
+            position: relative;
+            padding-left: var(--spacing-3xl);
+            counter-increment: step-counter;
+            font-size: var(--font-size-base);
+            line-height: 1.8;
+        }
+
+        .step::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: var(--spacing-md);
+            top: 50%;
+            transform: translateY(-50%);
+            width: 30px;
+            height: 30px;
+            background: var(--accent-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: white;
+        }
+
+        .step:hover {
+            background: linear-gradient(135deg, rgba(0, 128, 255, 0.1), rgba(139, 92, 246, 0.1));
+            transform: translateX(5px);
+            color: var(--text-primary);
+            border-left-width: 5px;
+        }
+
+        /* Materials Grid */
+        .materials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-xl);
+        }
+
+        .materials-column {
+            padding: var(--spacing-xl);
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border-radius: var(--border-radius-lg);
+            border: 1px solid var(--glass-border);
+            transition: all var(--transition-base);
+        }
+
+        .materials-column:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .materials-column__title {
+            font-size: var(--font-size-xl);
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .material-item {
+            padding: var(--spacing-sm) 0;
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--border-color);
+            transition: all var(--transition-fast);
+            font-size: var(--font-size-base);
+        }
+
+        .material-item:hover {
+            color: var(--text-primary);
+            padding-left: var(--spacing-md);
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--spacing-xl) 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 3px;
+            height: 100%;
+            background: var(--accent-gradient);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            position: relative;
+            width: 50%;
+            padding: var(--spacing-xl);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .timeline-item--visible {
+            animation: timeline-fade-in 0.6s forwards;
+        }
+
+        @keyframes timeline-fade-in {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            text-align: right;
+            padding-right: var(--spacing-3xl);
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+            padding-left: var(--spacing-3xl);
+        }
+
+        .timeline-dot {
+            position: absolute;
+            top: var(--spacing-xl);
+            width: 20px;
+            height: 20px;
+            background: var(--accent-gradient);
+            border-radius: 50%;
+            box-shadow: 0 0 0 5px var(--bg-primary), 0 0 20px rgba(0, 128, 255, 0.5);
+            animation: pulse-timeline 2s infinite;
+        }
+
+        @keyframes pulse-timeline {
+            0%, 100% {
+                box-shadow: 0 0 0 5px var(--bg-primary), 0 0 20px rgba(0, 128, 255, 0.5);
+            }
+            50% {
+                box-shadow: 0 0 0 5px var(--bg-primary), 0 0 40px rgba(0, 128, 255, 0.8);
+            }
+        }
+
+        .timeline-item:nth-child(odd) .timeline-dot {
+            right: -10px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-dot {
+            left: -10px;
+        }
+
+        .timeline-content {
+            padding: var(--spacing-xl);
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border-radius: var(--border-radius-lg);
+            border: 1px solid var(--glass-border);
+            transition: all var(--transition-base);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .timeline-content:hover {
+            transform: scale(1.05);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .timeline-content__title {
+            font-size: var(--font-size-xl);
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .timeline-content__description {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            font-size: var(--font-size-base);
+        }
+
+        /* Team Members Section */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: var(--spacing-xl);
+            margin-top: var(--spacing-2xl);
+        }
+
+        .team-member {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border-radius: var(--border-radius-lg);
+            border: 1px solid var(--glass-border);
+            padding: var(--spacing-xl);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-lg);
+            transition: all var(--transition-base);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .team-member::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0, 128, 255, 0.05), rgba(168, 85, 247, 0.05));
+            opacity: 0;
+            transition: opacity var(--transition-base);
+        }
+
+        .team-member:hover::before {
+            opacity: 1;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-glow);
+            border-color: var(--primary-color);
+        }
+
+        .team-member__number {
+            width: 60px;
+            height: 60px;
+            background: var(--accent-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--font-size-xl);
+            font-weight: 700;
+            color: white;
+            flex-shrink: 0;
+            box-shadow: 0 5px 20px rgba(0, 128, 255, 0.3);
+            transition: transform var(--transition-base);
+        }
+
+        .team-member:hover .team-member__number {
+            transform: scale(1.1) rotate(360deg);
+        }
+
+        .team-member__info {
+            flex: 1;
+        }
+
+        .team-member__name {
+            font-size: var(--font-size-lg);
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-xs);
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .team-member__class {
+            font-size: var(--font-size-base);
+            color: var(--text-secondary);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--bg-secondary);
+            padding: var(--spacing-3xl) 0 var(--spacing-xl);
+            border-top: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer__content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-2xl);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .footer__section {
+            padding: var(--spacing-md);
+        }
+
+        .footer__title {
+            font-size: var(--font-size-lg);
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .footer__text {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: var(--spacing-md);
+            font-size: var(--font-size-base);
+        }
+
+        .footer__list {
+            list-style: none;
+        }
+
+        .footer__list-item {
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .footer__link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: all var(--transition-fast);
+            font-size: var(--font-size-base);
+        }
+
+        .footer__link:hover {
+            color: var(--primary-color);
+            transform: translateX(5px);
+            display: inline-block;
+        }
+
+        /* Social Links */
+        .social-links {
+            display: flex;
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-md);
+        }
+
+        .social-link {
+            width: 44px;
+            height: 44px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: var(--text-primary);
+            border: 1px solid var(--glass-border);
+            transition: all var(--transition-base);
+        }
+
+        .social-link:hover {
+            background: var(--accent-gradient);
+            transform: translateY(-5px) rotate(360deg);
+            border-color: transparent;
+            box-shadow: 0 10px 30px rgba(0, 128, 255, 0.4);
+        }
+
+        .footer__bottom {
+            text-align: center;
+            padding-top: var(--spacing-xl);
+            border-top: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            font-size: var(--font-size-base);
+        }
+
+        /* Floating Action Button */
+        .fab {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: var(--accent-gradient);
+            border-radius: 50%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0, 128, 255, 0.4);
+            transition: all var(--transition-base);
+            z-index: 999;
+            border: none;
+        }
+
+        .fab--visible {
+            display: flex;
+            animation: bounce-in 0.5s;
+        }
+
+        @keyframes bounce-in {
+            0% { transform: scale(0); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        .fab:hover {
+            transform: scale(1.1) rotate(360deg);
+            box-shadow: 0 15px 35px rgba(0, 128, 255, 0.6);
+        }
+
+        /* Icon System */
+        .icon {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+            vertical-align: middle;
+        }
+
+        .icon--lg {
+            width: 32px;
+            height: 32px;
+        }
+
+        .icon--xl {
+            width: 48px;
+            height: 48px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .timeline::before {
+                left: 30px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                left: 0 !important;
+                padding-left: 60px !important;
+                padding-right: 20px !important;
+                text-align: left !important;
+            }
+
+            .timeline-dot {
+                left: 20px !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: flex;
+            }
+
+            .nav__list {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--surface);
+                flex-direction: column;
+                padding: var(--spacing-md);
+                gap: var(--spacing-sm);
+                transform: translateY(-20px);
+                opacity: 0;
+                visibility: hidden;
+                transition: all var(--transition-base);
+                border-radius: 0 0 var(--border-radius-lg) var(--border-radius-lg);
+                box-shadow: var(--shadow-xl);
+            }
+
+            .nav__list--active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .controls-group {
+                position: fixed;
+                bottom: 100px;
+                right: 30px;
+                flex-direction: column;
+                z-index: 998;
+            }
+
+            .systems-grid,
+            .materials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero__title {
+                font-size: 2.5rem;
+            }
+
+            .section {
+                padding: var(--spacing-3xl) 0;
+            }
+        }
+
+        /* Animation Classes */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Utility Classes */
+        .text-gradient {
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0,0,0,0);
+            white-space: nowrap;
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Aurora Background -->
+    <div class="aurora-background">
+        <div class="aurora"></div>
+    </div>
+
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader__logo">
+            <div class="preloader__circle"></div>
+            <div class="preloader__circle"></div>
+            <div class="preloader__circle"></div>
+        </div>
+        <div class="preloader__text">กำลังโหลด Smart Home 61...</div>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header__container">
+                <a href="#home" class="header__logo">
+                    <div class="header__logo-icon">
+                        <svg class="icon icon--lg" viewBox="0 0 24 24" fill="white">
+                            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                        </svg>
+                    </div>
+                    <span class="header__logo-text">Smart Home 61</span>
+                </a>
+
+                <nav class="nav">
+                    <ul class="nav__list" id="navList">
+                        <li><a href="#home" class="nav__link nav__link--active" data-lang-key="nav-home">หน้าแรก</a></li>
+                        <li><a href="#systems" class="nav__link" data-lang-key="nav-systems">ระบบ</a></li>
+                        <li><a href="#process" class="nav__link" data-lang-key="nav-process">วิธีการ</a></li>
+                        <li><a href="#timeline" class="nav__link" data-lang-key="nav-timeline">ขั้นตอน</a></li>
+                    </ul>
+
+                    <div class="controls-group">
+                        <!-- Language Switcher -->
+                        <div class="language-switcher">
+                            <button class="language-btn language-btn--active" id="langTH" data-lang="th">ไทย</button>
+                            <button class="language-btn" id="langEN" data-lang="en">EN</button>
+                        </div>
+
+                        <!-- Theme Toggle -->
+                        <div class="theme-toggle">
+                            <button class="theme-toggle__button theme-toggle__button--active" id="darkTheme">
+                                <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                                </svg>
+                            </button>
+                            <button class="theme-toggle__button" id="lightTheme">
+                                <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                                    <circle cx="12" cy="12" r="5"/>
+                                    <line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" stroke-width="2"/>
+                                    <line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" stroke-width="2"/>
+                                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" stroke-width="2"/>
+                                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <button class="mobile-menu-toggle" id="menuToggle">
+                        <span class="mobile-menu-toggle__bar"></span>
+                        <span class="mobile-menu-toggle__bar"></span>
+                        <span class="mobile-menu-toggle__bar"></span>
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero__background">
+                <div class="hero__gradient"></div>
+                <div class="hero__grid"></div>
+                <div class="floating-shapes">
+                    <div class="shape shape--circle" style="left: 10%; animation-delay: 0s;"></div>
+                    <div class="shape shape--square" style="left: 80%; animation-delay: 2s;"></div>
+                    <div class="shape shape--triangle" style="left: 50%; animation-delay: 4s;"></div>
+                    <div class="shape shape--circle" style="left: 30%; animation-delay: 6s;"></div>
+                    <div class="shape shape--square" style="left: 70%; animation-delay: 8s;"></div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="hero__content">
+                    <div class="hero__badge" data-lang-key="hero-badge">นวัตกรรมแห่งอนาคต</div>
+                    <h1 class="hero__title">Smart Home 61</h1>
+                    <p class="hero__subtitle" data-lang-key="hero-subtitle">ยกระดับการอยู่อาศัยสู่มิติใหม่</p>
+                    <p class="hero__description" data-lang-key="hero-description">
+                        ระบบบ้านอัจฉริยะระดับองค์กรที่ผสมผสานเทคโนโลยีปัญญาประดิษฐ์ 
+                        อินเทอร์เน็ตของสรรพสิ่ง และระบบอัตโนมัติขั้นสูง 
+                        ประหยัดพลังงานสูงสุด 60% พร้อมระบบรักษาความปลอดภัยตลอด 24 ชั่วโมง
+                    </p>
+                    <div class="hero__cta">
+                        <a href="#systems" class="btn btn--primary">
+                            <span data-lang-key="btn-explore">สำรวจระบบ</span>
+                            <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
+                            </svg>
+                        </a>
+                        <a href="#process" class="btn btn--secondary">
+                            <span data-lang-key="btn-learn">เรียนรู้เพิ่มเติม</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Statistics Section -->
+        <section class="section section--alt animate-on-scroll">
+            <div class="container">
+                <h2 class="section__title" data-lang-key="stats-title">ตัวเลขที่น่าประทับใจ</h2>
+                <p class="section__subtitle" data-lang-key="stats-subtitle">ประสิทธิภาพที่พิสูจน์ได้จริงจากการใช้งาน</p>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-card__number" data-target="60">0</div>
+                        <div class="stat-card__label" data-lang-key="stat-energy">% ประหยัดพลังงาน</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-card__number" data-target="24">0</div>
+                        <div class="stat-card__label" data-lang-key="stat-security">ชั่วโมง ความปลอดภัย</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-card__number" data-target="100">0</div>
+                        <div class="stat-card__label" data-lang-key="stat-auto">% อัตโนมัติ</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-card__number" data-target="4">0</div>
+                        <div class="stat-card__label" data-lang-key="stat-systems">ระบบหลัก</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Systems Section -->
+        <section class="section animate-on-scroll" id="systems">
+            <div class="container">
+                <h2 class="section__title" data-lang-key="systems-title">ระบบบ้านอัจฉริยะ</h2>
+                <p class="section__subtitle" data-lang-key="systems-subtitle">เทคโนโลยีล้ำสมัยที่ออกแบบมาเพื่อคุณ</p>
+
+                <div class="systems-grid">
+                    <article class="system-card">
+                        <div class="system-card__icon">
+                            <svg class="icon icon--xl" viewBox="0 0 24 24" fill="white">
+                                <path d="M12 2l-5.5 9h11z M17.5 17.5m-4.5 0a4.5 4.5 0 1 0 9 0 4.5 4.5 0 1 0 -9 0 M3 13.5h8v8H3z"/>
+                            </svg>
+                        </div>
+                        <h3 class="system-card__title" data-lang-key="system-door-title">ระบบประตูอัจฉริยะ</h3>
+                        <p class="system-card__description" data-lang-key="system-door-desc">
+                            ระบบประตูอัตโนมัติพร้อม AI ตรวจจับใบหน้าและระบบรักษาความปลอดภัยขั้นสูง
+                        </p>
+                        <ul class="features">
+                            <li class="features__item" data-lang-key="feature-face">ระบบจดจำใบหน้า AI</li>
+                            <li class="features__item" data-lang-key="feature-finger">สแกนลายนิ้วมือ</li>
+                            <li class="features__item" data-lang-key="feature-mobile">ควบคุมผ่านมือถือ</li>
+                            <li class="features__item" data-lang-key="feature-autolock">ระบบล็อคอัตโนมัติ</li>
+                            <li class="features__item" data-lang-key="feature-alert">แจ้งเตือนผู้มาเยือน</li>
+                        </ul>
+                    </article>
+
+                    <article class="system-card">
+                        <div class="system-card__icon">
+                            <svg class="icon icon--xl" viewBox="0 0 24 24" fill="white">
+                                <path d="M12 3v9l4-4-4 4-4-4 4 4V3m-3 6h6l-3 7-3-7z"/>
+                            </svg>
+                        </div>
+                        <h3 class="system-card__title" data-lang-key="system-light-title">ระบบแสงสว่างอัจฉริยะ</h3>
+                        <p class="system-card__description" data-lang-key="system-light-desc">
+                            ระบบไฟอัตโนมัติที่ตรวจจับการเคลื่อนไหวและปรับแสงตามสภาพแวดล้อม
+                        </p>
+                        <ul class="features">
+                            <li class="features__item" data-lang-key="feature-motion">ตรวจจับการเคลื่อนไหว</li>
+                            <li class="features__item" data-lang-key="feature-ambient">เซนเซอร์แสงแวดล้อม</li>
+                            <li class="features__item" data-lang-key="feature-schedule">ตั้งเวลาอัตโนมัติ</li>
+                            <li class="features__item" data-lang-key="feature-energy-monitor">ตรวจสอบการใช้พลังงาน</li>
+                            <li class="features__item" data-lang-key="feature-voice">สั่งงานด้วยเสียง</li>
+                        </ul>
+                    </article>
+
+                    <article class="system-card">
+                        <div class="system-card__icon">
+                            <svg class="icon icon--xl" viewBox="0 0 24 24" fill="white">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            </svg>
+                        </div>
+                        <h3 class="system-card__title" data-lang-key="system-climate-title">ระบบควบคุมสภาพอากาศ</h3>
+                        <p class="system-card__description" data-lang-key="system-climate-desc">
+                            ระบบควบคุมอุณหภูมิและความชื้นอัตโนมัติพร้อมระบบตรวจจับฝน
+                        </p>
+                        <ul class="features">
+                            <li class="features__item" data-lang-key="feature-temp">ควบคุมอุณหภูมิอัจฉริยะ</li>
+                            <li class="features__item" data-lang-key="feature-humidity">ปรับความชื้นอัตโนมัติ</li>
+                            <li class="features__item" data-lang-key="feature-rain">ระบบตรวจจับฝน</li>
+                            <li class="features__item" data-lang-key="feature-zone">ควบคุมแยกโซน</li>
+                            <li class="features__item" data-lang-key="feature-weather">เชื่อมต่อข้อมูลสภาพอากาศ</li>
+                        </ul>
+                    </article>
+
+                    <article class="system-card">
+                        <div class="system-card__icon">
+                            <svg class="icon icon--xl" viewBox="0 0 24 24" fill="white">
+                                <path d="M6 2v9H4v2h2v2h2v-2h8v2h2v-2h2v-2h-2V2H6zm4 2h4v5h-4V4zM4 16v6h6v-6H4zm10 0v6h6v-6h-6z"/>
+                            </svg>
+                        </div>
+                        <h3 class="system-card__title" data-lang-key="system-laundry-title">ระบบตากผ้าอัจฉริยะ</h3>
+                        <p class="system-card__description" data-lang-key="system-laundry-desc">
+                            ระบบตากผ้าอัตโนมัติที่ตรวจจับสภาพอากาศและเก็บผ้าเมื่อฝนตก
+                        </p>
+                        <ul class="features">
+                            <li class="features__item" data-lang-key="feature-weather-detect">ตรวจจับสภาพอากาศ</li>
+                            <li class="features__item" data-lang-key="feature-auto-retract">ระบบเก็บอัตโนมัติ</li>
+                            <li class="features__item" data-lang-key="feature-uv">ป้องกันรังสี UV</li>
+                            <li class="features__item" data-lang-key="feature-notify">แจ้งเตือนผ่านมือถือ</li>
+                            <li class="features__item" data-lang-key="feature-fabric">AI ดูแลผ้า</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Section -->
+        <section class="section section--alt animate-on-scroll" id="process">
+            <div class="container">
+                <h2 class="section__title" data-lang-key="process-title">วิธีการดำเนินการศึกษา</h2>
+                <p class="section__subtitle" data-lang-key="process-subtitle">
+                    จากการศึกษาค้นคว้าเรื่องการสร้างแบบจำลองบ้านและการเขียนคำสั่งโปรแกรม
+                </p>
+
+                <div class="process-card">
+                    <h3 class="process-card__title" data-lang-key="process-execution">การดำเนินงาน</h3>
+                    <div class="steps">
+                        <div class="step" data-lang-key="step-1">เลือกหัวข้อโครงงานและนำเสนอครู พร้อมทั้งเหตุผลในการทำ</div>
+                        <div class="step" data-lang-key="step-2">ออกแบบโครงสร้างของบ้านจำลองและคิดค้นฟังก์ชันของบ้าน</div>
+                        <div class="step" data-lang-key="step-3">จัดเตรียมวัสดุอุปกรณ์และเริ่มลงมือทำ</div>
+                        <div class="step" data-lang-key="step-4">วัดขนาดของกล่องกระดาษที่จะทำในแต่ละส่วนของบ้านและทำการตัดตามขนาด</div>
+                        <div class="step" data-lang-key="step-5">เริ่มการติดไม้ไอติมตามชิ้นส่วนของตัวบ้านด้วยกาวร้อน</div>
+                        <div class="step" data-lang-key="step-6">ทำการเขียนคำสั่งระบบบ้านผ่านโปรแกรม Kidbright</div>
+                        <div class="step" data-lang-key="step-7">ต่อวงจรไฟฟ้าทุกระบบของบ้านให้ทำงานได้</div>
+                        <div class="step" data-lang-key="step-8">ติดตั้งอุปกรณ์ IoT กับตัวบ้าน (พัดลม, LED, Servo motor)</div>
+                        <div class="step" data-lang-key="step-9">ประกอบชิ้นส่วนของบ้านให้สมบูรณ์ตามโครงสร้างที่ออกแบบไว้</div>
+
+                         <!-- Process Images Gallery -->
+<div class="image-gallery">
+    <h4 class="gallery-title">ภาพประกอบการดำเนินงาน</h4>
+    <div class="gallery-grid">
+        <div class="gallery-item">
+            <img src="Screenshot 2025-09-19 150928.png" alt="ขั้นตอนการประกอบโครงสร้างบ้าน" class="gallery-image">
+            <div class="gallery-caption">การประกอบโครงสร้างหลัก</div>
+        </div>
+        <div class="gallery-item">
+            <img src="Screenshot 2025-09-19 150943.png" alt="การติดตั้งระบบไฟฟ้า" class="gallery-image">
+            <div class="gallery-caption">การติดตั้งระบบไฟฟ้า</div>
+        </div>
+    </div>
+</div>
+                    </div>
+                </div>
+
+                <div class="process-card">
+                    <h3 class="process-card__title" data-lang-key="materials-title">เครื่องมือและวัสดุอุปกรณ์</h3>
+                    <div class="materials-grid">
+                        <div class="materials-column">
+                            <h4 class="materials-column__title" data-lang-key="tools-title">เครื่องมือ</h4>
+                            <div class="material-item" data-lang-key="tool-1">คัตเตอร์</div>
+                            <div class="material-item" data-lang-key="tool-2">กรรไกร</div>
+                            <div class="material-item" data-lang-key="tool-3">ปืนกาวร้อนและแท่งกาว</div>
+                            <div class="material-item" data-lang-key="tool-4">โปรแกรม Kidbright</div>
+
+                        </div>
+                        <div class="materials-column">
+                            <h4 class="materials-column__title" data-lang-key="materials-title">วัสดุอุปกรณ์</h4>
+                            <div class="material-item" data-lang-key="material-1">พัดลมระบายอากาศ</div>
+                            <div class="material-item" data-lang-key="material-2">Servo motor</div>
+                            <div class="material-item" data-lang-key="material-3">แผงไฟ LED 5 โวลต์</div>
+                            <div class="material-item" data-lang-key="material-4">แผงวัดน้ำฝน</div>
+                            <div class="material-item" data-lang-key="material-5">กล่องกระดาษ</div>
+                            <div class="material-item" data-lang-key="material-6">ไม้ไอติมขนาดเล็กและใหญ่</div>
+
+                            
+                        </div>
+                    </div>
+                    <!-- Materials Images Gallery -->
+<div class="image-gallery">
+    <h4 class="gallery-title">ภาพเครื่องมือและวัสดุอุปกรณ์</h4>
+    <div class="gallery-grid gallery-grid--triple">
+        <div class="gallery-item">
+            <img src="Screenshot 2025-09-19 150853.png" alt="เครื่องมือที่ใช้ในโครงงาน" class="gallery-image">
+            <div class="gallery-caption">เครื่องมือที่ใช้</div>
+        </div>
+        <div class="gallery-item">
+            <img src="Screenshot 2025-09-19 150911.png" alt="วัสดุอุปกรณ์อิเล็กทรอนิกส์" class="gallery-image">
+            <div class="gallery-caption">อุปกรณ์อิเล็กทรอนิกส์</div>
+        </div>
+    </div>
+</div>
+                </div>
+            </div>
+        </section>
+
+       
+
+
+
+        <!-- Timeline Section -->
+        <section class="section animate-on-scroll" id="timeline">
+            <div class="container">
+                <h2 class="section__title" data-lang-key="timeline-title">ขั้นตอนการติดตั้ง</h2>
+                <p class="section__subtitle" data-lang-key="timeline-subtitle">เริ่มต้นสู่บ้านอัจฉริยะใน 4 ขั้นตอนง่ายๆ</p>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-content__title" data-lang-key="timeline-1-title">1. วางแผนและออกแบบ</h3>
+                            <p class="timeline-content__description" data-lang-key="timeline-1-desc">
+                                สำรวจพื้นที่และวางแผนการติดตั้งระบบต่างๆ ให้เหมาะสมกับการใช้งาน
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-content__title" data-lang-key="timeline-2-title">2. ติดตั้งอุปกรณ์</h3>
+                            <p class="timeline-content__description" data-lang-key="timeline-2-desc">
+                                ติดตั้งเซ็นเซอร์ กล้อง และอุปกรณ์ IoT ตามจุดต่างๆ ของบ้าน
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-content__title" data-lang-key="timeline-3-title">3. เชื่อมต่อระบบ</h3>
+                            <p class="timeline-content__description" data-lang-key="timeline-3-desc">
+                                เชื่อมต่อทุกอุปกรณ์เข้ากับ Hub กลางและตั้งค่าการทำงานอัตโนมัติ
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-content__title" data-lang-key="timeline-4-title">4. ทดสอบและปรับแต่ง</h3>
+                            <p class="timeline-content__description" data-lang-key="timeline-4-desc">
+                                ทดสอบระบบทั้งหมดและปรับแต่งให้เหมาะกับความต้องการใช้งาน
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Members Section -->
+        <section class="section section--alt animate-on-scroll" id="team">
+            <div class="container">
+                <h2 class="section__title" data-lang-key="team-title">สมาชิกกลุ่ม</h2>
+                <p class="section__subtitle" data-lang-key="team-subtitle">กลุ่ม 2 โครงงานระบบบ้านอัจฉริยะ Smart Home 61</p>
+                
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="team-member__number">3</div>
+                        <div class="team-member__info">
+                            <h3 class="team-member__name">นายพีรวิชญ์ จิตณรงค์</h3>
+                            <p class="team-member__class">ชั้น ม.6/1 เลขที่ 3</p>
+                        </div>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="team-member__number">8</div>
+                        <div class="team-member__info">
+                            <h3 class="team-member__name">นางสาวนราวัลย์ คำสม</h3>
+                            <p class="team-member__class">ชั้น ม.6/1 เลขที่ 8</p>
+                        </div>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="team-member__number">9</div>
+                        <div class="team-member__info">
+                            <h3 class="team-member__name">นางสาวนารีรัตน์ ทิหลิ้ม</h3>
+                            <p class="team-member__class">ชั้น ม.6/1 เลขที่ 9</p>
+                        </div>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="team-member__number">11</div>
+                        <div class="team-member__info">
+                            <h3 class="team-member__name">นางสาวภัทรินทร์ ไชยประสิทธิ์</h3>
+                            <p class="team-member__class">ชั้น ม.6/1 เลขที่ 11</p>
+                        </div>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="team-member__number">13</div>
+                        <div class="team-member__info">
+                            <h3 class="team-member__name">นางสาวโสภาวรรณ พันเดช</h3>
+                            <p class="team-member__class">ชั้น ม.6/1 เลขที่ 13</p>
+                        </div>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="team-member__number">15</div>
+                        <div class="team-member__info">
+                            <h3 class="team-member__name">นางสาววรวรรณ เพรชหมื่นไวย</h3>
+                            <p class="team-member__class">ชั้น ม.6/1 เลขที่ 15</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <h3 class="footer__title">Smart Home 61</h3>
+                    <p class="footer__text" data-lang-key="footer-desc">
+                        นวัตกรรมบ้านอัจฉริยะที่ออกแบบมาเพื่อยกระดับคุณภาพชีวิตของคุณ
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/>
+                                <rect x="2" y="9" width="4" height="12"/>
+                                <circle cx="4" cy="4" r="2"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="YouTube">
+                            <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="5 3 19 12 5 21 5 3"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer__section">
+                    <h3 class="footer__title" data-lang-key="footer-links">ลิงก์ด่วน</h3>
+                    <ul class="footer__list">
+                        <li class="footer__list-item">
+                            <a href="#systems" class="footer__link" data-lang-key="footer-link-systems">ระบบของเรา</a>
+                        </li>
+                        <li class="footer__list-item">
+                            <a href="#process" class="footer__link" data-lang-key="footer-link-process">วิธีการ</a>
+                        </li>
+                        <li class="footer__list-item">
+                            <a href="#timeline" class="footer__link" data-lang-key="footer-link-timeline">ขั้นตอน</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer__section">
+                    <h3 class="footer__title" data-lang-key="footer-services">บริการ</h3>
+                    <ul class="footer__list">
+                        <li class="footer__list-item">
+                            <a href="#" class="footer__link" data-lang-key="footer-service-design">ออกแบบระบบ</a>
+                        </li>
+                        <li class="footer__list-item">
+                            <a href="#" class="footer__link" data-lang-key="footer-service-install">ติดตั้ง</a>
+                        </li>
+                        <li class="footer__list-item">
+                            <a href="#" class="footer__link" data-lang-key="footer-service-maintain">บำรุงรักษา</a>
+                        </li>
+                        <li class="footer__list-item">
+                            <a href="#" class="footer__link" data-lang-key="footer-service-upgrade">อัพเกรด</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer__section">
+                    <h3 class="footer__title" data-lang-key="footer-info">ข้อมูล</h3>
+                    <ul class="footer__list">
+                        <li class="footer__list-item">
+                            <a href="#" class="footer__link" data-lang-key="footer-about">เกี่ยวกับเรา</a>
+                        </li>
+                        <li class="footer__list-item">
+                            <a href="#" class="footer__link" data-lang-key="footer-faq">คำถามที่พบบ่อย</a>
+                        </li>
+                        <li class="footer__list-item">
+                            <a href="#" class="footer__link" data-lang-key="footer-privacy">นโยบายความเป็นส่วนตัว</a>
+                        </li>
+                        <li class="footer__list-item">
+                            <a href="#" class="footer__link" data-lang-key="footer-terms">เงื่อนไขการใช้งาน</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <p>&copy; 2025 Smart Home 61 - Group 2. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Action Button -->
+    <button class="fab" id="fab">
+        <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M7 14l5-5 5 5z"/>
+        </svg>
+    </button>
+
+    <script>
+        // Language Translations
+        const translations = {
+            th: {
+                // Navigation
+                'nav-home': 'หน้าแรก',
+                'nav-systems': 'ระบบ',
+                'nav-process': 'วิธีการ',
+                'nav-timeline': 'ขั้นตอน',
+                
+                // Hero Section
+                'hero-badge': 'นวัตกรรมแห่งอนาคต',
+                'hero-subtitle': 'ยกระดับการอยู่อาศัยสู่มิติใหม่',
+                'hero-description': 'ระบบบ้านอัจฉริยะระดับองค์กรที่ผสมผสานเทคโนโลยีปัญญาประดิษฐ์ อินเทอร์เน็ตของสรรพสิ่ง และระบบอัตโนมัติขั้นสูง ประหยัดพลังงานสูงสุด 60% พร้อมระบบรักษาความปลอดภัยตลอด 24 ชั่วโมง',
+                'btn-explore': 'สำรวจระบบ',
+                'btn-learn': 'เรียนรู้เพิ่มเติม',
+                
+                // Statistics
+                'stats-title': 'ตัวเลขที่น่าประทับใจ',
+                'stats-subtitle': 'ประสิทธิภาพที่พิสูจน์ได้จริงจากการใช้งาน',
+                'stat-energy': '% ประหยัดพลังงาน',
+                'stat-security': 'ชั่วโมง ความปลอดภัย',
+                'stat-auto': '% อัตโนมัติ',
+                'stat-systems': 'ระบบหลัก',
+                
+                // Systems
+                'systems-title': 'ระบบบ้านอัจฉริยะ',
+                'systems-subtitle': 'เทคโนโลยีล้ำสมัยที่ออกแบบมาเพื่อคุณ',
+                'system-door-title': 'ระบบประตูอัจฉริยะ',
+                'system-door-desc': 'ระบบประตูอัตโนมัติพร้อม AI ตรวจจับใบหน้าและระบบรักษาความปลอดภัยขั้นสูง',
+                'feature-face': 'ระบบจดจำใบหน้า AI',
+                'feature-finger': 'สแกนลายนิ้วมือ',
+                'feature-mobile': 'ควบคุมผ่านมือถือ',
+                'feature-autolock': 'ระบบล็อคอัตโนมัติ',
+                'feature-alert': 'แจ้งเตือนผู้มาเยือน',
+                
+                'system-light-title': 'ระบบแสงสว่างอัจฉริยะ',
+                'system-light-desc': 'ระบบไฟอัตโนมัติที่ตรวจจับการเคลื่อนไหวและปรับแสงตามสภาพแวดล้อม',
+                'feature-motion': 'ตรวจจับการเคลื่อนไหว',
+                'feature-ambient': 'เซนเซอร์แสงแวดล้อม',
+                'feature-schedule': 'ตั้งเวลาอัตโนมัติ',
+                'feature-energy-monitor': 'ตรวจสอบการใช้พลังงาน',
+                'feature-voice': 'สั่งงานด้วยเสียง',
+                
+                'system-climate-title': 'ระบบควบคุมสภาพอากาศ',
+                'system-climate-desc': 'ระบบควบคุมอุณหภูมิและความชื้นอัตโนมัติพร้อมระบบตรวจจับฝน',
+                'feature-temp': 'ควบคุมอุณหภูมิอัจฉริยะ',
+                'feature-humidity': 'ปรับความชื้นอัตโนมัติ',
+                'feature-rain': 'ระบบตรวจจับฝน',
+                'feature-zone': 'ควบคุมแยกโซน',
+                'feature-weather': 'เชื่อมต่อข้อมูลสภาพอากาศ',
+                
+                'system-laundry-title': 'ระบบตากผ้าอัจฉริยะ',
+                'system-laundry-desc': 'ระบบตากผ้าอัตโนมัติที่ตรวจจับสภาพอากาศและเก็บผ้าเมื่อฝนตก',
+                'feature-weather-detect': 'ตรวจจับสภาพอากาศ',
+                'feature-auto-retract': 'ระบบเก็บอัตโนมัติ',
+                'feature-uv': 'ป้องกันรังสี UV',
+                'feature-notify': 'แจ้งเตือนผ่านมือถือ',
+                'feature-fabric': 'AI ดูแลผ้า',
+                
+                // Process
+                'process-title': 'วิธีการดำเนินการศึกษา',
+                'process-subtitle': 'จากการศึกษาค้นคว้าเรื่องการสร้างแบบจำลองบ้านและการเขียนคำสั่งโปรแกรม',
+                'process-execution': 'การดำเนินงาน',
+                'step-1': 'เลือกหัวข้อโครงงานและนำเสนอครู พร้อมทั้งเหตุผลในการทำ',
+                'step-2': 'ออกแบบโครงสร้างของบ้านจำลองและคิดค้นฟังก์ชันของบ้าน',
+                'step-3': 'จัดเตรียมวัสดุอุปกรณ์และเริ่มลงมือทำ',
+                'step-4': 'วัดขนาดของกล่องกระดาษที่จะทำในแต่ละส่วนของบ้านและทำการตัดตามขนาด',
+                'step-5': 'เริ่มการติดไม้ไอติมตามชิ้นส่วนของตัวบ้านด้วยกาวร้อน',
+                'step-6': 'ทำการเขียนคำสั่งระบบบ้านผ่านโปรแกรม Kidbright',
+                'step-7': 'ต่อวงจรไฟฟ้าทุกระบบของบ้านให้ทำงานได้',
+                'step-8': 'ติดตั้งอุปกรณ์ IoT กับตัวบ้าน (พัดลม, LED, Servo motor)',
+                'step-9': 'ประกอบชิ้นส่วนของบ้านให้สมบูรณ์ตามโครงสร้างที่ออกแบบไว้',
+                
+                'materials-title': 'เครื่องมือและวัสดุอุปกรณ์',
+                'tools-title': 'เครื่องมือ',
+                'tool-1': 'คัตเตอร์',
+                'tool-2': 'กรรไกร',
+                'tool-3': 'ปืนกาวร้อนและแท่งกาว',
+                'tool-4': 'โปรแกรม Kidbright',
+                
+                'material-1': 'พัดลมระบายอากาศ',
+                'material-2': 'Servo motor',
+                'material-3': 'แผงไฟ LED 5 โวลต์',
+                'material-4': 'แผงวัดน้ำฝน',
+                'material-5': 'กล่องกระดาษ',
+                'material-6': 'ไม้ไอติมขนาดเล็กและใหญ่',
+                
+                // Timeline
+                'timeline-title': 'ขั้นตอนการติดตั้ง',
+                'timeline-subtitle': 'เริ่มต้นสู่บ้านอัจฉริยะใน 4 ขั้นตอนง่ายๆ',
+                'timeline-1-title': '1. วางแผนและออกแบบ',
+                'timeline-1-desc': 'สำรวจพื้นที่และวางแผนการติดตั้งระบบต่างๆ ให้เหมาะสมกับการใช้งาน',
+                'timeline-2-title': '2. ติดตั้งอุปกรณ์',
+                'timeline-2-desc': 'ติดตั้งเซ็นเซอร์ กล้อง และอุปกรณ์ IoT ตามจุดต่างๆ ของบ้าน',
+                'timeline-3-title': '3. เชื่อมต่อระบบ',
+                'timeline-3-desc': 'เชื่อมต่อทุกอุปกรณ์เข้ากับ Hub กลางและตั้งค่าการทำงานอัตโนมัติ',
+                'timeline-4-title': '4. ทดสอบและปรับแต่ง',
+                'timeline-4-desc': 'ทดสอบระบบทั้งหมดและปรับแต่งให้เหมาะกับความต้องการใช้งาน',
+                
+                // Team Members
+                'team-title': 'สมาชิกกลุ่ม',
+                'team-subtitle': 'กลุ่ม 2 โครงงานระบบบ้านอัจฉริยะ Smart Home 61',
+                
+                // Footer
+                'footer-desc': 'นวัตกรรมบ้านอัจฉริยะที่ออกแบบมาเพื่อยกระดับคุณภาพชีวิตของคุณ',
+                'footer-links': 'ลิงก์ด่วน',
+                'footer-link-systems': 'ระบบของเรา',
+                'footer-link-process': 'วิธีการ',
+                'footer-link-timeline': 'ขั้นตอน',
+                'footer-services': 'บริการ',
+                'footer-service-design': 'ออกแบบระบบ',
+                'footer-service-install': 'ติดตั้ง',
+                'footer-service-maintain': 'บำรุงรักษา',
+                'footer-service-upgrade': 'อัพเกรด',
+                'footer-info': 'ข้อมูล',
+                'footer-about': 'เกี่ยวกับเรา',
+                'footer-faq': 'คำถามที่พบบ่อย',
+                'footer-privacy': 'นโยบายความเป็นส่วนตัว',
+                'footer-terms': 'เงื่อนไขการใช้งาน'
+            },
+            en: {
+                // Navigation
+                'nav-home': 'Home',
+                'nav-systems': 'Systems',
+                'nav-process': 'Process',
+                'nav-timeline': 'Timeline',
+                
+                // Hero Section
+                'hero-badge': 'Future Innovation',
+                'hero-subtitle': 'Elevating Living to a New Dimension',
+                'hero-description': 'Enterprise-grade smart home system integrating artificial intelligence, Internet of Things, and advanced automation. Achieve up to 60% energy savings with 24/7 intelligent security monitoring.',
+                'btn-explore': 'Explore Systems',
+                'btn-learn': 'Learn More',
+                
+                // Statistics
+                'stats-title': 'Impressive Numbers',
+                'stats-subtitle': 'Proven performance from real-world implementation',
+                'stat-energy': '% Energy Savings',
+                'stat-security': 'Hour Security',
+                'stat-auto': '% Automation',
+                'stat-systems': 'Core Systems',
+                
+                // Systems
+                'systems-title': 'Smart Home Systems',
+                'systems-subtitle': 'Cutting-edge technology designed for you',
+                'system-door-title': 'Smart Door System',
+                'system-door-desc': 'Automated door system with AI face detection and advanced security features',
+                'feature-face': 'AI Face Recognition',
+                'feature-finger': 'Fingerprint Scanner',
+                'feature-mobile': 'Mobile Control',
+                'feature-autolock': 'Auto-Lock System',
+                'feature-alert': 'Visitor Alert',
+                
+                'system-light-title': 'Intelligent Lighting',
+                'system-light-desc': 'Automated lighting system with motion detection and adaptive ambient control',
+                'feature-motion': 'Motion Detection',
+                'feature-ambient': 'Ambient Light Sensor',
+                'feature-schedule': 'Schedule Programming',
+                'feature-energy-monitor': 'Energy Monitoring',
+                'feature-voice': 'Voice Control',
+                
+                'system-climate-title': 'Climate Control',
+                'system-climate-desc': 'Automated temperature and humidity control with rain detection system',
+                'feature-temp': 'Smart Temperature Control',
+                'feature-humidity': 'Humidity Regulation',
+                'feature-rain': 'Rain Detection System',
+                'feature-zone': 'Zone Control',
+                'feature-weather': 'Weather Integration',
+                
+                'system-laundry-title': 'Smart Laundry',
+                'system-laundry-desc': 'Automated laundry system with weather detection and auto-retract when raining',
+                'feature-weather-detect': 'Weather Detection',
+                'feature-auto-retract': 'Auto Retract System',
+                'feature-uv': 'UV Protection',
+                'feature-notify': 'Mobile Notifications',
+                'feature-fabric': 'Fabric Care AI',
+                
+                // Process
+                'process-title': 'Implementation Methodology',
+                'process-subtitle': 'Research and development process for smart home model creation',
+                'process-execution': 'Project Execution',
+                'step-1': 'Topic selection and presentation with rationale',
+                'step-2': 'Architectural design and functional planning',
+                'step-3': 'Material preparation and procurement',
+                'step-4': 'Precise measurement and cutting of components',
+                'step-5': 'Assembly using hot glue adhesive techniques',
+                'step-6': 'Programming implementation via Kidbright platform',
+                'step-7': 'Electrical circuit integration for all systems',
+                'step-8': 'IoT device installation (fans, LEDs, servo motors)',
+                'step-9': 'Final assembly according to designed structure',
+                
+                'materials-title': 'Tools and Materials',
+                'tools-title': 'Tools',
+                'tool-1': 'Cutter',
+                'tool-2': 'Scissors',
+                'tool-3': 'Hot Glue Gun and Sticks',
+                'tool-4': 'Kidbright Program',
+                
+                'material-1': 'Ventilation Fan',
+                'material-2': 'Servo Motor',
+                'material-3': '5V LED Panel',
+                'material-4': 'Rain Sensor',
+                'material-5': 'Cardboard Box',
+                'material-6': 'Popsicle Sticks (Various Sizes)',
+                
+                // Timeline
+                'timeline-title': 'Installation Process',
+                'timeline-subtitle': 'Start your smart home journey in 4 simple steps',
+                'timeline-1-title': '1. Planning & Design',
+                'timeline-1-desc': 'Site survey and system planning tailored to your needs',
+                'timeline-2-title': '2. Device Installation',
+                'timeline-2-desc': 'Installing sensors, cameras, and IoT devices throughout the premises',
+                'timeline-3-title': '3. System Integration',
+                'timeline-3-desc': 'Connecting all devices to central hub and configuring automation',
+                'timeline-4-title': '4. Testing & Optimization',
+                'timeline-4-desc': 'Comprehensive system testing and performance optimization',
+                
+                // Team Members
+                'team-title': 'Team Members',
+                'team-subtitle': 'Group 2 - Smart Home 61 Project Team',
+                
+                // Footer
+                'footer-desc': 'Smart home innovation designed to elevate your quality of life',
+                'footer-links': 'Quick Links',
+                'footer-link-systems': 'Our Systems',
+                'footer-link-process': 'Process',
+                'footer-link-timeline': 'Timeline',
+                'footer-services': 'Services',
+                'footer-service-design': 'System Design',
+                'footer-service-install': 'Installation',
+                'footer-service-maintain': 'Maintenance',
+                'footer-service-upgrade': 'Upgrades',
+                'footer-info': 'Information',
+                'footer-about': 'About Us',
+                'footer-faq': 'FAQs',
+                'footer-privacy': 'Privacy Policy',
+                'footer-terms': 'Terms of Service'
+            }
+        };
+
+        // Language Manager
+        const languageManager = {
+            currentLang: 'th',
+            
+            init() {
+                const savedLang = localStorage.getItem('language') || 'th';
+                this.setLanguage(savedLang);
+                
+                document.getElementById('langTH').addEventListener('click', () => this.setLanguage('th'));
+                document.getElementById('langEN').addEventListener('click', () => this.setLanguage('en'));
+            },
+            
+            setLanguage(lang) {
+                this.currentLang = lang;
+                document.documentElement.lang = lang;
+                
+                // Update button states
+                document.getElementById('langTH').classList.toggle('language-btn--active', lang === 'th');
+                document.getElementById('langEN').classList.toggle('language-btn--active', lang === 'en');
+                
+                // Update all translations
+                document.querySelectorAll('[data-lang-key]').forEach(element => {
+                    const key = element.getAttribute('data-lang-key');
+                    if (translations[lang][key]) {
+                        element.textContent = translations[lang][key];
+                    }
+                });
+                
+                localStorage.setItem('language', lang);
+            }
+        };
+
+        // Theme Manager
+        const themeManager = {
+            init() {
+                const savedTheme = localStorage.getItem('theme') || 'dark';
+                this.setTheme(savedTheme);
+                
+                document.getElementById('darkTheme').addEventListener('click', () => this.setTheme('dark'));
+                document.getElementById('lightTheme').addEventListener('click', () => this.setTheme('light'));
+            },
+            
+            setTheme(theme) {
+                document.body.classList.toggle('light-theme', theme === 'light');
+                
+                document.getElementById('darkTheme').classList.toggle('theme-toggle__button--active', theme === 'dark');
+                document.getElementById('lightTheme').classList.toggle('theme-toggle__button--active', theme === 'light');
+                
+                localStorage.setItem('theme', theme);
+            }
+        };
+
+        // Initialize
+        window.addEventListener('DOMContentLoaded', () => {
+            // Hide preloader
+            setTimeout(() => {
+                document.getElementById('preloader').classList.add('preloader--hidden');
+            }, 1500);
+            
+            // Initialize managers
+            languageManager.init();
+            themeManager.init();
+            
+            // Navigation
+            const menuToggle = document.getElementById('menuToggle');
+            const navList = document.getElementById('navList');
+            
+            menuToggle.addEventListener('click', () => {
+                navList.classList.toggle('nav__list--active');
+            });
+            
+            // Scroll effects
+            const header = document.getElementById('header');
+            const fab = document.getElementById('fab');
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 100) {
+                    header.classList.add('header--scrolled');
+                } else {
+                    header.classList.remove('header--scrolled');
+                }
+                
+                if (window.scrollY > 300) {
+                    fab.classList.add('fab--visible');
+                } else {
+                    fab.classList.remove('fab--visible');
+                }
+            });
+            
+            // FAB click
+            fab.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+            
+            // Counter animation
+            const observerOptions = {
+                threshold: 0.5
+            };
+            
+            const counterObserver = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const counter = entry.target;
+                        const target = parseInt(counter.getAttribute('data-target'));
+                        let current = 0;
+                        const increment = target / 50;
+                        
+                        const updateCounter = () => {
+                            if (current < target) {
+                                current += increment;
+                                counter.textContent = Math.ceil(current);
+                                requestAnimationFrame(updateCounter);
+                            } else {
+                                counter.textContent = target;
+                            }
+                        };
+                        
+                        updateCounter();
+                        counterObserver.unobserve(counter);
+                    }
+                });
+            }, observerOptions);
+            
+            document.querySelectorAll('.stat-card__number').forEach(counter => {
+                counterObserver.observe(counter);
+            });
+            
+            // Timeline animation
+            const timelineObserver = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('timeline-item--visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            document.querySelectorAll('.timeline-item').forEach(item => {
+                timelineObserver.observe(item);
+            });
+            
+            // Scroll animations
+            const scrollObserver = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            document.querySelectorAll('.animate-on-scroll').forEach(element => {
+                scrollObserver.observe(element);
+            });
+        });
+
+        // Lightbox functionality
+const lightbox = document.getElementById('lightbox');
+const lightboxImage = document.getElementById('lightboxImage');
+const lightboxCaption = document.getElementById('lightboxCaption');
+const lightboxClose = document.getElementById('lightboxClose');
+
+// Add click events to all gallery images
+document.querySelectorAll('.gallery-item').forEach(item => {
+    item.addEventListener('click', function() {
+        const img = this.querySelector('.gallery-image');
+        const caption = this.querySelector('.gallery-caption');
+        
+        lightboxImage.src = img.src;
+        lightboxImage.alt = img.alt;
+        lightboxCaption.textContent = caption.textContent;
+        lightbox.classList.add('lightbox--active');
+        document.body.style.overflow = 'hidden';
+    });
+});
+
+// Close lightbox
+lightboxClose.addEventListener('click', () => {
+    lightbox.classList.remove('lightbox--active');
+    document.body.style.overflow = '';
+});
+
+// Close on ESC key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && lightbox.classList.contains('lightbox--active')) {
+        lightbox.classList.remove('lightbox--active');
+        document.body.style.overflow = '';
+    }
+});
+
+// Close on background click
+lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+        lightbox.classList.remove('lightbox--active');
+        document.body.style.overflow = '';
+    }
+});
+
+    </script>
+    
+    <!-- Lightbox Modal for Images -->
+<div class="lightbox" id="lightbox">
+    <button class="lightbox__close" id="lightboxClose">&times;</button>
+    <img class="lightbox__image" id="lightboxImage" src="" alt="">
+    <div class="lightbox__caption" id="lightboxCaption"></div>
+</div>
+</body>
+</html>
